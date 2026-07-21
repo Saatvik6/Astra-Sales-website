@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Astra Sales | Surgical & Medical Product Distribution",
-  description: "Astra Sales specialises in the marketing and distribution of branded surgical and medical products for hospitals, clinics and healthcare professionals.",
+  title: "Astra Sales India | Healthcare Procurement & Medical Distribution",
+  description: "Established in 2005, Astra Sales India provides single-point procurement across 18+ surgical, diagnostic, PPE, pharma, furniture and ICU categories.",
   other: {
     "codex-preview": "development",
   },
@@ -31,11 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
