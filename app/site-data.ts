@@ -7,4 +7,4 @@ export const productCategories = [
   { slug: "breast-prosthesis", title: "Breast Prosthesis", short: "Thoughtfully selected post-operative and prosthetic-care solutions.", intro: "Thoughtfully selected prosthetic and post-operative solutions supported by sensitive, informed service.", focus: ["Breast prosthesis", "Post-operative support", "Product guidance"] },
   { slug: "allied-products", title: "Allied Products", short: "A practical range of complementary surgical and medical supplies.", intro: "Complementary surgical and medical products that extend Astra Sales' focused clinical portfolio.", focus: ["Surgical accessories", "Medical consumables", "Complementary products"] },
 ];
-export const mainNav = [["Products", "/products"], ["About", "/about"], ["Partners", "/partners"], ["Careers", "/careers"], ["Contact", "/contact"]] as const;
+export const mainNav = [["Home", "/"], ["Products", "/products"], ["About", "/about"], ["Partners", "/partners"], ["Careers", "/careers"], ["Contact", "/contact"]] as const;

@@ -56,6 +56,7 @@ export default function Home() {
       <a href="#top" aria-label="Astra Sales India home"><Logo /></a>
       <button className="menuButton" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-label="Toggle navigation"><span /><span /></button>
       <nav className={menu ? "nav open" : "nav"} aria-label="Primary navigation">
+        <Link href="/" onClick={() => setMenu(false)}>Home</Link>
         <Link href="/products" onClick={() => setMenu(false)}>Products</Link>
         <Link href="/about" onClick={() => setMenu(false)}>About</Link>
         <Link href="/partners" onClick={() => setMenu(false)}>Partners</Link>
@@ -78,10 +79,6 @@ export default function Home() {
         <div className="proof proofOne"><span>✓</span><div><b>Fully compliant</b><small>GST, IEC, CDSCO &amp; drug licensed</small></div></div>
         <div className="proof proofTwo"><span>18+</span><div><b>Single-point supply</b><small>Across product categories</small></div></div>
       </div>
-    </section>
-
-    <section className="categoryRail" aria-label="Featured product categories">
-      {products.map(product => <Link key={product.title} href={`/products/${product.slug}`}><span className="icon"><Icon type={product.type} /></span><b>{product.title}</b><Arrow /></Link>)}
     </section>
 
     <section className="intro section" id="about">
