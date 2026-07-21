@@ -7,7 +7,7 @@ export function Logo() {
   return (
     <span className="brand">
       <Image className="brandLogoImage" src="/astra-sales-logo.jpeg" alt="Astra Sales India logo" width={68} height={68} />
-      <span className="brandName"><span>ASTRA</span><span>SALES</span></span>
+      <span className="brandName"><span>ASTRA</span><span>SALES INDIA</span></span>
     </span>
   );
 }
@@ -15,7 +15,7 @@ export function Logo() {
 export function SiteHeader() {
   return (
     <header className="header innerHeader">
-      <Link href="/" aria-label="Astra Sales home"><Logo /></Link>
+      <Link href="/" aria-label="Astra Sales India home"><Logo /></Link>
       <nav className="nav" aria-label="Primary navigation">
         {mainNav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
       </nav>

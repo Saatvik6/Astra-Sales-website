@@ -53,7 +53,7 @@ export default function Home() {
 
   return <main>
     <header className="header">
-      <a href="#top" aria-label="Astra Sales home"><Logo /></a>
+      <a href="#top" aria-label="Astra Sales India home"><Logo /></a>
       <button className="menuButton" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-label="Toggle navigation"><span /><span /></button>
       <nav className={menu ? "nav open" : "nav"} aria-label="Primary navigation">
         <Link href="/products" onClick={() => setMenu(false)}>Products</Link>
