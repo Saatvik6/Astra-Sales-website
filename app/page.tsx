@@ -72,7 +72,6 @@ export default function Home() {
         <h1>Solutions to hundreds of queries in <em>healthcare.</em></h1>
         <p className="lead">For over 20 years, Astra Sales India has delivered uncompromising quality and dependable supply to hospitals across India and the Gulf.</p>
         <div className="actions"><Link className="button primary" href="/products">Explore product range <Arrow /></Link><Link className="button secondary" href="/contact">Request a quote <Arrow /></Link></div>
-        <div className="trustPill"><span className="shield">✓</span><span>20+ years</span><i /><span>18+ categories</span><i /><span>Export ready</span></div>
       </div>
       <div className="heroVisual">
         <Image src="/astra-hero-production.png" alt="Branded surgical and medical supplies arranged in a clinical environment" fill sizes="(max-width: 1100px) 100vw, 54vw" priority />
