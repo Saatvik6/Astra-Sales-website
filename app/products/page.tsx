@@ -22,12 +22,13 @@ export default function Products() {
       <section className="listing catalogueListing section" aria-label="Product categories">
         {productCategories.map((category, index) => (
           <Link className="listingCard categoryCard" href={`/products/${category.slug}`} key={category.slug}>
-            <div className="categoryCardImage">
+            <div className="categoryCardImage relative">
               <Image
                 src={category.products[0].image}
                 alt={`${category.title} category`}
                 fill
                 sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                className="catalogueImageContain"
                 unoptimized
               />
             </div>

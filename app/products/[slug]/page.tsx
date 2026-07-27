@@ -61,12 +61,13 @@ export default async function ProductCategory({ params }: { params: Promise<{ sl
         <div className="catalogueGrid">
           {category.products.map((product, index) => (
             <article className="catalogueProduct" key={`${product.name}-${index}`}>
-              <div className="catalogueProductImage">
+              <div className="catalogueProductImage relative">
                 <Image
                   src={product.image}
                   alt={`${product.name} supplied by Astra Sales India`}
                   fill
                   sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw"
+                  className="catalogueImageContain"
                   unoptimized
                 />
               </div>
