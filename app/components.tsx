@@ -6,7 +6,7 @@ import { mainNav } from "./site-data";
 export function Logo() {
   return (
     <span className="brand">
-      <Image className="brandLogoImage" src="/astra-sales-logo.jpeg" alt="Astra Sales India logo" width={68} height={68} />
+      <Image className="brandLogoImage" src="/astra-sales-logo.jpeg" alt="Astra Sales India logo" width={68} height={68} unoptimized />
       <span className="brandName"><span>ASTRA</span><span>SALES INDIA</span></span>
     </span>
   );

@@ -43,3 +43,28 @@ footer{grid-template-columns:minmax(245px,1.15fr) .7fr 1fr 1fr auto}
 
 @media(max-width:1100px){footer{grid-template-columns:1fr 1fr}.footerIdentity{grid-row:auto}.footerLinks{grid-column:1/-1}}
 @media(max-width:760px){footer{grid-template-columns:1fr}.footerLinks{grid-column:auto}.valueBand{padding:12px 24px}.valueBand article{padding:22px 4px}.valueBand h3{font-size:20px;margin:9px 0 5px}.valueBand p{font-size:14px;line-height:1.5;margin:0}}
+
+/* Complete product catalogue */
+.catalogueListing{align-items:stretch}
+.categoryCard{padding:0;overflow:hidden;min-height:430px}
+.categoryCardImage{position:relative;min-height:220px;background:#fff;border-bottom:1px solid var(--line)}
+.categoryCardImage img{object-fit:contain;padding:22px}
+.categoryCardBody{display:flex;flex:1;flex-direction:column;padding:28px 30px 30px}
+.categoryCardBody>span{font-size:12px;color:var(--teal);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.categoryCardBody h2{margin:18px 0 12px}
+.categoryCardBody b{margin-top:auto;padding-top:24px}
+.catalogueSection{background:var(--pale);padding-top:90px}
+.catalogueHead{margin-bottom:42px}
+.catalogueGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.catalogueProduct{min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+.catalogueProduct:hover{transform:translateY(-4px);border-color:var(--teal2);box-shadow:0 18px 40px rgba(11,46,109,.09)}
+.catalogueProductImage{position:relative;aspect-ratio:1/1;background:#fff;border-bottom:1px solid var(--line)}
+.catalogueProductImage img{object-fit:contain;padding:22px}
+.catalogueProductBody{display:flex;min-height:165px;flex-direction:column;padding:22px}
+.catalogueProductBody>span{color:var(--teal);font-size:11px;font-weight:700;letter-spacing:.1em}
+.catalogueProductBody h3{font-size:18px;line-height:1.35;margin:12px 0 20px}
+.catalogueProductBody a{color:var(--teal);font-size:13px;font-weight:700;margin-top:auto}
+
+@media(max-width:1100px){.catalogueGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){.catalogueGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.categoryCard{min-height:0}.categoryCardImage{min-height:240px}.catalogueSection{padding-top:70px}.catalogueGrid{grid-template-columns:1fr}.catalogueProductImage{aspect-ratio:4/3}.catalogueProductBody{min-height:145px}}
