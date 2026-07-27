@@ -76,13 +76,11 @@ export default function Home() {
       </div>
       <div className="heroVisual">
         <Image src="/astra-hero-production.png" alt="Branded surgical and medical supplies arranged in a clinical environment" fill sizes="(max-width: 1100px) 100vw, 54vw" priority />
-        <div className="proof proofOne"><span>✓</span><div><b>Fully compliant</b><small>GST, IEC, CDSCO &amp; drug licensed</small></div></div>
-        <div className="proof proofTwo"><span>18+</span><div><b>Single-point supply</b><small>Across product categories</small></div></div>
       </div>
     </section>
 
     <section className="intro section" id="about">
-      <div><p className="kicker">Astra Sales (India)</p><h2>Quality that does not compromise. Delivery that does not delay.</h2></div>
+      <div><p className="kicker">Astra Sales India</p><h2>Quality that does not compromise. Delivery that does not delay.</h2></div>
       <div><p>Since 2005, we have connected healthcare buyers with carefully selected surgical, diagnostic, PPE, pharma, hospital-furniture and ICU solutions through one dependable relationship.</p><div className="factRow"><span><b>2005</b>Established</span><span><b>18+</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div><Link className="textLink" href="/about">Read our story <Arrow /></Link></div>
     </section>
 

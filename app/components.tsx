@@ -41,13 +41,19 @@ export function SiteFooter() {
         <span>{company.registeredOffice[0]}</span>
         <span>{company.registeredOffice[1]}</span>
       </div>
+      <div className="footerBranch">
+        <strong>Branch office</strong>
+        <span>{company.branchOffice[0]}</span>
+        <span>{company.branchOffice[1]}</span>
+        <a href={`tel:${company.branchLandline.replace(/-/g, "")}`}>{company.branchLandline}</a>
+      </div>
       <div className="footerLinks">
         <Link href="/products">Products</Link>
         <Link href="/about">About</Link>
         <Link href="/partners">Partners</Link>
         <Link href="/contact">Enquiry</Link>
       </div>
-      <small>© {new Date().getFullYear()} Astra Sales (India). All rights reserved.</small>
+      <small>© {new Date().getFullYear()} Astra Sales India. All rights reserved.</small>
     </footer>
   );
 }

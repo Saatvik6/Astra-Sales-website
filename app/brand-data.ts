@@ -1,5 +1,5 @@
 export const company = {
-  name: "Astra Sales (India)",
+  name: "Astra Sales India",
   proprietor: "Ritesh Dhingra",
   phone: "+91 98115 16076",
   phoneHref: "tel:+919811516076",

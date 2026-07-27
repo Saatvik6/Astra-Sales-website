@@ -31,7 +31,7 @@ export default function Contact() {
     <section className="contactPage section">
       <aside className="contactAside">
         <p className="kicker">Direct contact</p><h2>Start a conversation.</h2>
-        <div className="personCard"><span>Proprietor</span><strong>{company.proprietor}</strong><p>Astra Sales (India)</p></div>
+        <div className="personCard"><span>Proprietor</span><strong>{company.proprietor}</strong><p>Astra Sales India</p></div>
         <div className="contactMethods"><a href={company.phoneHref}><span>Call</span><b>{company.phone}</b></a><a href={company.whatsappHref} target="_blank" rel="noreferrer"><span>WhatsApp</span><b>{company.phone}</b></a><a href={`mailto:${company.email}`}><span>Email</span><b>{company.email}</b></a></div>
         <p>For faster product assistance, please include the category, expected quantity and institution or organisation name.</p>
       </aside>
