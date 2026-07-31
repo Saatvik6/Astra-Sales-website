@@ -161,6 +161,6 @@ export const mainNav = [
   ["Products", "/products"],
   ["About", "/about"],
   ["Partners", "/partners"],
-  ["Careers", "/careers"],
+  ["Opportunities", "/opportunities"],
   ["Contact", "/contact"],
 ] as const;

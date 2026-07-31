@@ -60,7 +60,7 @@ export default function Home() {
         <Link href="/products" onClick={() => setMenu(false)}>Products</Link>
         <Link href="/about" onClick={() => setMenu(false)}>About</Link>
         <Link href="/partners" onClick={() => setMenu(false)}>Partners</Link>
-        <Link href="/careers" onClick={() => setMenu(false)}>Careers</Link>
+        <Link href="/opportunities" onClick={() => setMenu(false)}>Opportunities</Link>
         <Link href="/contact" onClick={() => setMenu(false)}>Contact</Link>
       </nav>
       <Link className="button headerCta" href="/contact">Request a quote <Arrow /></Link>
@@ -69,7 +69,7 @@ export default function Home() {
     <section className="hero" id="top">
       <div className="heroCopy">
         <p className="eyebrow">Established in {company.established} · Single-point procurement</p>
-        <h1>Solutions to hundreds of queries in <em>healthcare.</em></h1>
+        <h1><span>Driving Health.</span><em>Delivering Solutions</em></h1>
         <p className="lead">For over 20 years, Astra Sales India has delivered uncompromising quality and dependable supply to hospitals across India and the Gulf.</p>
         <div className="actions"><Link className="button primary" href="/products">Explore product range <Arrow /></Link><Link className="button secondary" href="/contact">Request a quote <Arrow /></Link></div>
       </div>
@@ -84,13 +84,23 @@ export default function Home() {
     </section>
 
     <section className="products section" id="products">
-      <div className="sectionHead"><div><p className="kicker">Featured portfolio</p><h2>Specialised categories.<br />One dependable partner.</h2></div><p>Our wider portfolio spans 18+ surgical, diagnostic, PPE, pharma, furniture and critical-care categories. Explore featured areas or contact our team for a specific requirement.</p></div>
+      <div className="sectionHead"><div><p className="kicker">Featured portfolio</p><h2>Our product categories</h2></div><p>Our wider portfolio spans 18+ surgical, diagnostic, PPE, pharma, furniture and critical-care categories. Explore featured areas or contact our team for a specific requirement.</p></div>
       <div className="productGrid">{products.map((product, index) => <article id={product.type} key={product.title} className="productCard"><div className="productIcon"><Icon type={product.type} /></div><span>0{index + 1}</span><h3>{product.title}</h3><p>{product.text}</p><Link href={`/products/${product.slug}`} aria-label={`Explore ${product.title}`}>Explore <Arrow /></Link></article>)}</div>
     </section>
 
     <section className="specialities" id="specialities">
-      <div className="specialityIntro"><p className="kicker light">Why buyers choose Astra Sales</p><h2>Experience, reach and accountability in one supply partner.</h2><p>Built for institutional buyers who need documented quality, clear communication and dependable fulfilment.</p></div>
+      <div className="specialityIntro"><p className="kicker light">Why buyers choose Astra Sales</p><h2>Why Partner With Us?</h2><p>Built for institutional buyers who need documented quality, clear communication and dependable fulfilment.</p></div>
       <div className="reasonGrid">{buyerReasons.map((reason, index) => <article key={reason.title}><span>0{index + 1}</span><div><h3>{reason.title}</h3><p>{reason.copy}</p></div></article>)}</div>
+    </section>
+
+    <section className="founderStatement section" aria-labelledby="founder-statement">
+      <div className="founderProfile">
+        <div className="founderPortrait">
+          <Image src="/ritesh-dhingra-portrait.png" alt={`${company.proprietor}, Proprietor of Astra Sales India`} fill sizes="(max-width: 760px) 132px, 180px" />
+        </div>
+        <div className="founderIdentity"><strong>{company.proprietor}</strong><span>Proprietor, Astra Sales India</span></div>
+      </div>
+      <blockquote id="founder-statement"><p>“For over 20 years, Astra Sales India has stood on one principle — quality that doesn’t compromise, delivery that doesn’t delay, <span>for every hospital we serve, from Delhi to the Gulf.</span>”</p></blockquote>
     </section>
 
     <section className="trustSection section">

@@ -16,7 +16,7 @@ export default function Products() {
       <SiteHeader />
       <PageHero
         eyebrow={`${productCategories.length} categories · ${productCount} products`}
-        title="Specialised categories. One dependable partner."
+        title="Our product categories"
         copy="Explore the surgical, critical-care, dialysis, protective, rehabilitation and allied products available through Astra Sales India."
       />
       <section className="listing catalogueListing section" aria-label="Product categories">

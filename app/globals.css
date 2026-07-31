@@ -75,3 +75,23 @@ footer{grid-template-columns:minmax(245px,1.15fr) .7fr 1fr 1fr auto}
 .catalogueImageContain{object-fit:contain;padding:22px}
 @media(max-width:1100px){.heroVisual{min-height:520px}}
 @media(max-width:760px){.heroVisual{min-height:420px}}
+
+/* Keep the two hero statements on their own lines at every viewport size. */
+.hero h1 span,.hero h1 em{display:block;white-space:nowrap}
+@media(min-width:1101px){.hero h1{font-size:clamp(36px,3.5vw,64px)}}
+@media(max-width:760px){.hero h1{font-size:clamp(26px,8vw,46px)}}
+
+/* Founder statement */
+.founderStatement{display:grid;grid-template-columns:minmax(180px,250px) minmax(0,1fr);gap:clamp(50px,9vw,150px);align-items:center;background:var(--teal);color:#fff}
+.founderProfile{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:22px}
+.founderPortrait{position:relative;width:clamp(150px,12vw,180px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--pale)}
+.founderPortrait img{object-fit:cover;object-position:center}
+.founderIdentity{display:flex;flex-direction:column;gap:6px}
+.founderIdentity strong{font-family:Poppins,"Libre Franklin",Arial,sans-serif;font-size:18px;color:#fff}
+.founderIdentity span{color:#c4d4e8;font-size:14px;line-height:1.4}
+.founderStatement blockquote{margin:0;align-self:center}
+.founderStatement blockquote p{font-family:Poppins,"Libre Franklin",Arial,sans-serif;font-size:clamp(30px,3vw,46px);font-weight:500;line-height:1.35;letter-spacing:-.035em;margin:0;color:#fff}
+.founderStatement blockquote span{color:inherit}
+@media(max-width:900px){.founderStatement{grid-template-columns:170px minmax(0,1fr);gap:40px}.founderStatement blockquote p{font-size:clamp(28px,3.8vw,38px)}}
+@media(max-width:760px){.founderStatement{grid-template-columns:1fr;gap:38px}.founderPortrait{width:132px;flex:0 0 132px}.founderStatement blockquote p{font-size:clamp(26px,6.5vw,32px);line-height:1.28}}
+@media(max-width:420px){.founderPortrait{width:120px;flex-basis:120px}}
