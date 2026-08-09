@@ -101,7 +101,7 @@ footer{grid-template-columns:minmax(245px,1.15fr) .7fr 1fr 1fr auto}
 
 /* Faded right-side healthcare image and compact trust points. */
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.13fr);position:relative;height:640px;min-height:640px;background:#fff;overflow:hidden}
-.heroCopy{position:relative;z-index:2;min-width:0;height:640px;min-height:0}
+.heroCopy{position:relative;z-index:2;min-width:0;height:640px;min-height:0;background:#fff}
 .heroVisual{position:relative;inset:auto;min-width:0;height:640px;min-height:640px;overflow:hidden;border-radius:0}
 .heroVisual>img{object-fit:cover;object-position:58% center}
 .heroVisual:after{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.9) 12%,rgba(255,255,255,.32) 28%,rgba(255,255,255,0) 44%)}
