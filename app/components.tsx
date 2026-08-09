@@ -36,16 +36,28 @@ export function SiteFooter() {
         <a href={company.phoneHref}>{company.phone}</a>
         <a href={`mailto:${company.email}`}>{company.email}</a>
       </div>
-      <div className="footerOffice">
-        <strong>Registered office</strong>
-        <span>{company.registeredOffice[0]}</span>
-        <span>{company.registeredOffice[1]}</span>
+      <div className="footerSocial">
+        <strong>Follow us on Instagram:</strong>
+        <a className="footerInstagram" href="https://www.instagram.com/astrasalesindia" target="_blank" rel="noreferrer" aria-label="Follow Astra Sales India on Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle className="instagramDot" cx="17.4" cy="6.6" r="1" />
+          </svg>
+        </a>
       </div>
-      <div className="footerBranch">
-        <strong>Branch office</strong>
-        <span>{company.branchOffice[0]}</span>
-        <span>{company.branchOffice[1]}</span>
-        <a href={`tel:${company.branchLandline.replace(/-/g, "")}`}>{company.branchLandline}</a>
+      <div className="footerOffices">
+        <div className="footerBranch">
+          <strong>Branch office</strong>
+          <span>{company.branchOffice[0]}</span>
+          <span>{company.branchOffice[1]}</span>
+          <a href={`tel:${company.branchLandline.replace(/-/g, "")}`}>{company.branchLandline}</a>
+        </div>
+        <div className="footerOffice">
+          <strong>Registered office</strong>
+          <span>{company.registeredOffice[0]}</span>
+          <span>{company.registeredOffice[1]}</span>
+        </div>
       </div>
       <div className="footerLinks">
         <Link href="/products">Products</Link>
