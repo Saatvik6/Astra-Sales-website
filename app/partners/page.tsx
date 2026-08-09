@@ -16,7 +16,7 @@ export default function Partners() {
 
     <section className="institutionSection section">
       <div className="sectionHead"><div><p className="kicker">Institutional trust</p><h2>Trusted by India&apos;s leading medical institutions.</h2></div><p>Our experience spans government, defence, railway and private healthcare organisations.</p></div>
-      <div className="logoGrid institutionLogos">{trustedInstitutions.map(institution => <div className="logoTile" key={institution.name}><Image src={institution.logo} alt={`${institution.name} logo`} width={220} height={100} /><span>{institution.name}</span></div>)}</div>
+      <div className="logoGrid institutionLogos">{trustedInstitutions.map(institution => <div className="logoTile" key={institution.name}><div className="institutionLogoFrame"><Image src={institution.logo} alt={`${institution.name} logo`} width={220} height={100} style={{ transform: `scale(${institution.logoScale})` }} /></div><span>{institution.name}</span></div>)}</div>
     </section>
 
     <section className="compliancePage section">

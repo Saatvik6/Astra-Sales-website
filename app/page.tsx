@@ -21,6 +21,55 @@ const Icon = ({ type }: { type: string }) => {
   return <svg viewBox="0 0 24 24" aria-hidden="true">{paths[type]}</svg>;
 };
 
+const TrustIcon = ({ type }: { type: "quality" | "global" | "trusted" }) => {
+  const paths: Record<typeof type, React.ReactNode> = {
+    quality: (
+      <>
+        <circle cx="12" cy="9" r="5" />
+        <path d="m9 14-2 7 5-3 5 3-2-7M10 9l1.3 1.3L14 7.7" />
+      </>
+    ),
+
+    global: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z" />
+      </>
+    ),
+
+    trusted: (
+    <>
+      {/* Left hand */}
+      <path d="M3 12.5 6.5 9h3l2.5 2.5" />
+      <path d="m3 12.5 2.5 2.5 2-1" />
+      <path d="m5.5 15 2 2a1.5 1.5 0 0 0 2.1 0l.4-.4" />
+
+      {/* Right hand */}
+      <path d="M21 12.5 17.5 9h-3L12 11.5" />
+      <path d="m21 12.5-2.5 2.5-2-1" />
+      <path d="m18.5 15-2 2a1.5 1.5 0 0 1-2.1 0l-.4-.4" />
+
+      {/* Joined hands / fingers */}
+      <path d="m8 12 2.5 2.5a2 2 0 0 0 3 0L16 12" />
+      <path d="m9.5 10.5 2 2" />
+      <path d="m14.5 10.5-2 2" />
+    </>
+  ),
+  };
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {paths[type]}
+    </svg>
+  );
+};
+
+const heroTrustPoints = [
+  { type: "quality", label: "Premium Quality" },
+  { type: "global", label: "Global Supply Network" },
+  { type: "trusted", label: "Trusted by Healthcare Professionals" },
+] as const;
+
 const products = [
   { type: "icu", slug: "icu-products", title: "ICU Products", text: "Critical-care essentials selected for demanding clinical environments." },
   { type: "disinfectants", slug: "disinfectants", title: "Disinfectants", text: "Professional infection-prevention and surface hygiene solutions." },
@@ -68,29 +117,21 @@ export default function Home() {
 
     <section className="hero" id="top">
       <div className="heroCopy">
-        <p className="eyebrow">Established in {company.established} · Single-point procurement</p>
-        <h1><span>Driving Health.</span><em>Delivering Solutions</em></h1>
-        <p className="lead">For over 20 years, Astra Sales India has delivered uncompromising quality and dependable supply to hospitals across India and the Gulf.</p>
+        <h1><span>Your trusted medical supply partner</span><em>From India to the world!</em></h1>
+        <p className="lead">For over 20 years, Astra Sales India has delivered uncompromising quality and dependable supply to hospitals across the globe.</p>
         <div className="actions"><Link className="button primary" href="/products">Explore product range <Arrow /></Link><Link className="button secondary" href="/contact">Request a quote <Arrow /></Link></div>
+        <div className="heroTrust" aria-label="Astra Sales strengths">
+          {heroTrustPoints.map(point => <div className="heroTrustItem" key={point.type}><span className="heroTrustIcon"><TrustIcon type={point.type} /></span><span>{point.label}</span></div>)}
+        </div>
       </div>
       <div className="heroVisual">
-        <Image src="/astra-hero-production.png" alt="Branded surgical and medical supplies arranged in a clinical environment" fill sizes="(max-width: 1100px) 100vw, 54vw" priority />
+        <Image src="/astra-hero-healthcare-collage.png" alt="A medical-gloved hand holding a connected globe beside modern healthcare imagery" fill sizes="(max-width: 760px) 100vw, 53vw" priority />
       </div>
     </section>
 
     <section className="intro section" id="about">
       <div><p className="kicker">Astra Sales India</p><h2>Quality that does not compromise. Delivery that does not delay.</h2></div>
-      <div><p>Since 2005, we have connected healthcare buyers with carefully selected surgical, diagnostic, PPE, pharma, hospital-furniture and ICU solutions through one dependable relationship.</p><div className="factRow"><span><b>2005</b>Established</span><span><b>18+</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div><Link className="textLink" href="/about">Read our story <Arrow /></Link></div>
-    </section>
-
-    <section className="products section" id="products">
-      <div className="sectionHead"><div><p className="kicker">Featured portfolio</p><h2>Our product categories</h2></div><p>Our wider portfolio spans 18+ surgical, diagnostic, PPE, pharma, furniture and critical-care categories. Explore featured areas or contact our team for a specific requirement.</p></div>
-      <div className="productGrid">{products.map((product, index) => <article id={product.type} key={product.title} className="productCard"><div className="productIcon"><Icon type={product.type} /></div><span>0{index + 1}</span><h3>{product.title}</h3><p>{product.text}</p><Link href={`/products/${product.slug}`} aria-label={`Explore ${product.title}`}>Explore <Arrow /></Link></article>)}</div>
-    </section>
-
-    <section className="specialities" id="specialities">
-      <div className="specialityIntro"><p className="kicker light">Why buyers choose Astra Sales</p><h2>Why Partner With Us?</h2><p>Built for institutional buyers who need documented quality, clear communication and dependable fulfilment.</p></div>
-      <div className="reasonGrid">{buyerReasons.map((reason, index) => <article key={reason.title}><span>0{index + 1}</span><div><h3>{reason.title}</h3><p>{reason.copy}</p></div></article>)}</div>
+      <div><p>Astra Sales India offers a comprehensive, multi-category product range, making us a true single-point procurement partner for hospitals & international buyers alike.</p><div className="factRow"><span><b>2005</b>Established</span><span><b>18+</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div><Link className="textLink" href="/about">Read our story <Arrow /></Link></div>
     </section>
 
     <section className="founderStatement section" aria-labelledby="founder-statement">
@@ -101,6 +142,16 @@ export default function Home() {
         <div className="founderIdentity"><strong>{company.proprietor}</strong><span>Proprietor, Astra Sales India</span></div>
       </div>
       <blockquote id="founder-statement"><p>“For over 20 years, Astra Sales India has stood on one principle — quality that doesn’t compromise, delivery that doesn’t delay, <span>for every hospital we serve, from Delhi to the Gulf.</span>”</p></blockquote>
+    </section>
+
+    <section className="products section" id="products">
+      <div className="sectionHead"><div><p className="kicker">Featured portfolio</p><h2>Our product categories</h2></div><p>Our wider portfolio spans 18+ surgical, diagnostic, PPE, pharma, furniture and critical-care categories. Explore featured areas or contact our team for a specific requirement.</p></div>
+      <div className="productGrid">{products.map((product, index) => <article id={product.type} key={product.title} className="productCard"><div className="productIcon"><Icon type={product.type} /></div><span>0{index + 1}</span><h3>{product.title}</h3><p>{product.text}</p><Link href={`/products/${product.slug}`} aria-label={`Explore ${product.title}`}>Explore <Arrow /></Link></article>)}</div>
+    </section>
+
+    <section className="specialities" id="specialities">
+      <div className="specialityIntro"><p className="kicker light">Why buyers choose Astra Sales</p><h2>Why Partner With Us?</h2><p>Built for institutional buyers who need documented quality, clear communication and dependable fulfilment.</p></div>
+      <div className="reasonGrid">{buyerReasons.map(reason => <article key={reason.title}><span aria-hidden="true">✓</span><h3>{reason.title}</h3></article>)}</div>
     </section>
 
     <section className="trustSection section">

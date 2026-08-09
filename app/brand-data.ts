@@ -52,7 +52,6 @@ export const channelPartners = [
   { name: "Datt Mediproducts", logo: "/brands/partners/datt-mediproducts.png" },
   { name: "Ayka Medical Packaging", logo: "/brands/partners/ayka.png" },
   { name: "Polymed", logo: "/brands/partners/polymed.png" },
-  { name: "Medikit", logo: "/brands/partners/medikit.png" },
   { name: "Promax", logo: "/brands/partners/promax.png" },
   { name: "Tuoren", logo: "/brands/partners/tuoren.png" },
   { name: "Aarna Biomedical Products", logo: "/brands/partners/aarna-biomedical.png" },
@@ -60,18 +59,18 @@ export const channelPartners = [
 ] as const;
 
 export const trustedInstitutions = [
-  { name: "AIIMS", logo: "/brands/institutions/aiims.png" },
-  { name: "Army Hospital Research & Referral", logo: "/brands/institutions/ahrr.png" },
-  { name: "Command Hospital", logo: "/brands/institutions/command-hospital.png" },
-  { name: "Army Medical Corps", logo: "/brands/institutions/army-medical-corps.png" },
-  { name: "Northern Railway", logo: "/brands/institutions/northern-railway.png" },
-  { name: "ESIC", logo: "/brands/institutions/esic.png" },
-  { name: "Fortis", logo: "/brands/institutions/fortis.png" },
-  { name: "Max Healthcare", logo: "/brands/institutions/max-healthcare.png" },
-  { name: "Apollo Hospitals", logo: "/brands/institutions/apollo.png" },
-  { name: "Manipal Hospitals", logo: "/brands/institutions/manipal.png" },
-  { name: "Medanta", logo: "/brands/institutions/medanta.png" },
-  { name: "Narayana Health", logo: "/brands/institutions/narayana-health.png" },
+  { name: "AIIMS", logo: "/brands/institutions/aiims.png", logoScale: 1 },
+  { name: "Army Hospital Research & Referral", logo: "/brands/institutions/ahrr.png", logoScale: 1.05 },
+  { name: "Command Hospital", logo: "/brands/institutions/command-hospital.png", logoScale: 1 },
+  { name: "Army Medical Corps", logo: "/brands/institutions/army-medical-corps.png", logoScale: 1 },
+  { name: "Northern Railway", logo: "/brands/institutions/northern-railway.png", logoScale: 1.1 },
+  { name: "ESIC", logo: "/brands/institutions/esic.png", logoScale: 1 },
+  { name: "Fortis", logo: "/brands/institutions/fortis.png", logoScale: 0.65 },
+  { name: "Max Healthcare", logo: "/brands/institutions/max-healthcare.png", logoScale: 2 },
+  { name: "Apollo Hospitals", logo: "/brands/institutions/apollo.png", logoScale: 1.25 },
+  { name: "Manipal Hospitals", logo: "/brands/institutions/manipal.png", logoScale: 2 },
+  { name: "Medanta", logo: "/brands/institutions/medanta.png", logoScale: 2 },
+  { name: "Narayana Health", logo: "/brands/institutions/narayana-health.png", logoScale: 2 },
 ] as const;
 
 export const complianceMarks = [

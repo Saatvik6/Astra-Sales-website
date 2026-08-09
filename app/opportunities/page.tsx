@@ -18,8 +18,8 @@ export default function Opportunities() {
           <h2>Grow with a focused medical-distribution business.</h2>
         </div>
         <div>
-          <p>Opportunities may arise across sales, product support, customer coordination, market development and operations.</p>
-          <p>Tell us about your experience, the role you are interested in and how you could contribute to Astra Sales.</p>
+          <p>We aim to develop the healthcare market for our products with an eye on the future. We are expanding our operations and are looking at undertaking dealerships of medical and surgical companies.</p>
+          <p>We welcome enquiries from international hospitals, distributors, procurement organisations, NGOs and UN agencies. We are ready to supply, quote &amp; partner.</p>
           <Link className="textLink" href="/contact?subject=opportunity">Share your profile →</Link>
         </div>
       </section>
