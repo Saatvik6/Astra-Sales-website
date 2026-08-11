@@ -126,4 +126,91 @@ footer{grid-template-columns:minmax(245px,1.15fr) .7fr 1fr 1fr auto}
 .heroTrustItem b{color:#25364d;font-family:Poppins,"Libre Franklin",Arial,sans-serif;font-size:16px;font-weight:600;line-height:1.45}
 @media(max-width:1100px) and (min-width:761px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);height:640px;min-height:640px}.heroCopy{height:640px;padding:60px 30px 40px}.heroVisual{height:640px;min-height:640px}.hero h1{font-size:clamp(34px,4vw,44px)}.heroTrust{margin-top:34px}.heroTrustItem{gap:14px;min-height:80px;padding:0 14px}.heroTrustIcon{width:54px;height:54px;flex-basis:54px}.heroTrustIcon svg{width:33px;height:33px}.heroTrustItem b{font-size:15px}}
 @media(max-width:900px) and (min-width:761px){.heroTrust{align-items:flex-start;flex-wrap:wrap;gap:14px 0}.heroTrustItem{flex:1 1 135px}.heroTrustItem:nth-child(2){border-right:0}.heroTrustItem:last-child{padding-left:0}}
-@media(max-width:760px){.hero{grid-template-columns:1fr;height:auto;min-height:0}.heroCopy{height:auto;min-height:0;padding:50px 24px 46px}.heroVisual{height:390px;min-height:390px}.heroVisual>img{object-position:65% center}.heroVisual:after{background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.38) 18%,rgba(255,255,255,0) 38%)}.heroTrust{align-items:stretch;flex-wrap:wrap;gap:18px 0;margin-top:38px}.heroTrustItem{flex:1 1 145px;gap:13px;min-height:74px;padding:0 12px}.heroTrustItem:first-child{padding-left:0}.heroTrustItem:nth-child(2){border-right:0}.heroTrustItem:last-child{padding-left:0}.heroTrustIcon{width:50px;height:50px;flex-basis:50px}.heroTrustIcon svg{width:31px;height:31px}.heroTrustItem b{font-size:14px}}
+@media(max-width:760px){
+
+  .hero{
+    grid-template-columns:1fr;
+    height:auto;
+    min-height:0
+  }
+
+  .heroCopy{
+    height:auto;
+    min-height:0;
+    padding:50px 24px 46px
+  }
+
+  .heroVisual{
+    height:390px;
+    min-height:390px
+  }
+
+  .heroVisual>img{
+    object-position:65% center
+  }
+
+  .heroVisual:after{
+    background:linear-gradient(
+      180deg,
+      #fff 0%,
+      rgba(255,255,255,.38) 18%,
+      rgba(255,255,255,0) 38%
+    )
+  }
+
+  /* REPLACE THE OLD TRUST STYLES WITH THESE */
+
+  .heroTrust{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:100%;
+    gap:0;
+    margin-top:38px;
+  }
+
+  .heroTrustItem{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    text-align:center;
+
+    min-width:0;
+    min-height:110px;
+
+    padding:0 10px;
+    gap:10px;
+
+    border-right:1px solid var(--line);
+  }
+
+  .heroTrustItem:first-child{
+    padding-left:10px;
+  }
+
+  .heroTrustItem:nth-child(2){
+    border-right:1px solid var(--line);
+  }
+
+  .heroTrustItem:last-child{
+    padding-left:10px;
+    padding-right:10px;
+    border-right:0;
+  }
+
+  .heroTrustIcon{
+    width:48px;
+    height:48px;
+    flex:0 0 48px;
+  }
+
+  .heroTrustIcon svg{
+    width:29px;
+    height:29px;
+  }
+
+  .heroTrustItem b{
+    font-size:13px;
+    line-height:1.35;
+  }
+}
