@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { buyerReasons, company, complianceMarks, trustedInstitutions } from "./brand-data";
 import { Logo, SiteFooter } from "./components";
+import { ExportPresence } from "./export-presence";
 
 const Arrow = () => <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
 
@@ -130,8 +131,12 @@ export default function Home() {
     </section>
 
     <section className="intro section" id="about">
-      <div><p className="kicker">Astra Sales India</p><h2>Quality that does not compromise. Delivery that does not delay.</h2></div>
-      <div><p>Astra Sales India offers a comprehensive, multi-category product range, making us a true single-point procurement partner for hospitals & international buyers alike.</p><div className="factRow"><span><b>2005</b>Established</span><span><b>18+</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div><Link className="textLink" href="/about">Read our story <Arrow /></Link></div>
+      <div className="introCopy">
+        <p className="kicker">Astra Sales India</p>
+        <p>Astra Sales India offers a comprehensive, multi-category product range, making us a true single-point procurement partner for hospitals &amp; international buyers alike.</p>
+        <Link className="textLink" href="/about">Read our story <Arrow /></Link>
+      </div>
+      <div className="factRow"><span><b>2005</b>Established</span><span><b>18+</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div>
     </section>
 
     <section className="founderStatement section" aria-labelledby="founder-statement">
@@ -163,6 +168,7 @@ export default function Home() {
     <section className="complianceBand section">
       <div><p className="kicker light">Fully compliant. Export ready.</p><h2>Documentation built for confident procurement.</h2><p>Registered and equipped to support both domestic supply and international shipment documentation.</p></div>
       <div className="compliancePreview">{complianceMarks.map(mark => <article key={mark.name}><Image src={mark.logo} alt={`${mark.name} mark`} width={220} height={100} /><b>{mark.name}</b></article>)}</div>
+      <ExportPresence />
     </section>
 
     <section className="quote section" id="contact">

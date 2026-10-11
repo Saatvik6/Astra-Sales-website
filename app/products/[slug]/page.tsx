@@ -29,7 +29,7 @@ export default async function ProductCategory({ params }: { params: Promise<{ sl
     <main>
       <SiteHeader />
       <PageHero
-        eyebrow={`${category.products.length} ${category.products.length === 1 ? "product" : "products"}`}
+        eyebrow={category.products.length > 0 ? `${category.products.length} ${category.products.length === 1 ? "product" : "products"}` : "Product enquiries"}
         title={category.title}
         copy={category.intro}
       />
@@ -50,7 +50,7 @@ export default async function ProductCategory({ params }: { params: Promise<{ sl
           ))}
         </aside>
       </section>
-      <section className="catalogueSection section">
+      {category.products.length > 0 && <section className="catalogueSection section">
         <div className="sectionHead catalogueHead">
           <div>
             <p className="kicker">Product catalogue</p>
@@ -79,7 +79,7 @@ export default async function ProductCategory({ params }: { params: Promise<{ sl
             </article>
           ))}
         </div>
-      </section>
+      </section>}
       <section className="pageCta">
         <div>
           <p className="kicker light">Enquire about {category.title}</p>

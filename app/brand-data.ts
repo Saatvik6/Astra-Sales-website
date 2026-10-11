@@ -56,6 +56,7 @@ export const channelPartners = [
   { name: "Tuoren", logo: "/brands/partners/tuoren.png" },
   { name: "Aarna Biomedical Products", logo: "/brands/partners/aarna-biomedical.png" },
   { name: "Health Kosh", logo: "/brands/partners/health-kosh.png" },
+  { name: "Lifesol", logo: "/brands/partners/lifesol.jpg" },
 ] as const;
 
 export const trustedInstitutions = [

@@ -70,6 +70,6 @@ export function SiteFooter() {
   );
 }
 
-export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
-  return <section className="pageHero"><p className="kicker">{eyebrow}</p><h1>{title}</h1><p>{copy}</p></section>;
+export function PageHero({ eyebrow, title, copy }: { eyebrow?: string; title: string; copy: string }) {
+  return <section className="pageHero">{eyebrow && <p className="kicker">{eyebrow}</p>}<h1>{title}</h1><p>{copy}</p></section>;
 }
