@@ -30,7 +30,7 @@ export default function Products() {
               />}
             </div>
             <div className="categoryCardBody">
-              <span>{String(index + 1).padStart(2, "0")} · {category.products.length > 0 ? `${category.products.length} ${category.products.length === 1 ? "product" : "products"}` : "Product enquiries"}</span>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h2>{category.title}</h2>
               <p>{category.short}</p>
               <b>{category.products.length > 0 ? "View products" : "View category"} →</b>
