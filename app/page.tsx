@@ -6,21 +6,9 @@ import Link from "next/link";
 import { buyerReasons, company, complianceMarks, trustedInstitutions } from "./brand-data";
 import { Logo, SiteFooter } from "./components";
 import { ExportPresence } from "./export-presence";
+import { homeProducts as products } from "./home-products";
 
 const Arrow = () => <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
-
-const Icon = ({ type }: { type: string }) => {
-  const paths: Record<string, React.ReactNode> = {
-    icu: <><path d="M3 12h4l2-5 4 10 2-5h6" /><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" /></>,
-    disinfectants: <><path d="M9 3h6v4H9zM8 7h8l2 4v10H6V11l2-4Z" /><path d="M10 14h4M12 12v4M15 3h3" /></>,
-    clothing: <><path d="m8 4-5 4 3 5 2-1v9h8v-9l2 1 3-5-5-4c-.8 1-1.7 1.5-4 1.5S8.8 5 8 4Z" /></>,
-    dialysis: <><path d="M8 4c-3 1-4 4-4 7 0 4 2 7 5 8 2-1 3-4 3-7V6c-1-2-2-3-4-2ZM16 4c3 1 4 4 4 7 0 4-2 7-5 8-2-1-3-4-3-7V6c1-2 2-3 4-2Z" /></>,
-    hernia: <><path d="M7 4c2 2 2 4 1 7s0 7 4 9M17 4c-2 2-2 4-1 7s0 7-4 9" /><circle cx="12" cy="12" r="3" /></>,
-    breast: <><path d="M12 3C9 7 5 11 5 16a7 7 0 0 0 14 0c0-5-4-9-7-13Z" /><path d="M9 16c1.5-2 4.5-2 6 0" /></>,
-    allied: <><path d="M8 4h8M9 4v4l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V4" /><path d="M8 14h8" /></>,
-  };
-  return <svg viewBox="0 0 24 24" aria-hidden="true">{paths[type]}</svg>;
-};
 
 const TrustIcon = ({ type }: { type: "quality" | "global" | "trusted" }) => {
   const paths: Record<typeof type, React.ReactNode> = {
@@ -70,16 +58,6 @@ const heroTrustPoints = [
   { type: "global", label: "Global Supply Network" },
   { type: "trusted", label: "Trusted by Healthcare Professionals" },
 ] as const;
-
-const products = [
-  { type: "icu", slug: "icu-products", title: "ICU Products", text: "Critical-care essentials selected for demanding clinical environments." },
-  { type: "disinfectants", slug: "disinfectants", title: "Disinfectants", text: "Professional infection-prevention and surface hygiene solutions." },
-  { type: "clothing", slug: "protective-clothing", title: "Protective Clothing", text: "Clinical apparel and barriers designed to support safer working." },
-  { type: "dialysis", slug: "dialysis", title: "Dialysis", text: "Dependable products supporting renal-care workflows." },
-  { type: "hernia", slug: "hernia", title: "Hernia", text: "Specialised surgical products for hernia management procedures." },
-  { type: "breast", slug: "breast-prosthesis", title: "Breast Prosthesis", text: "Thoughtfully selected post-operative and prosthetic-care solutions." },
-  { type: "allied", slug: "allied-products", title: "Allied Products", text: "A practical range of complementary surgical and medical supplies." },
-];
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -136,7 +114,7 @@ export default function Home() {
         <p>Astra Sales India offers a comprehensive, multi-category product range, making us a true single-point procurement partner for hospitals &amp; international buyers alike.</p>
         <Link className="textLink" href="/about">Read our story <Arrow /></Link>
       </div>
-      <div className="factRow"><span><b>2005</b>Established</span><span><b>18+</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div>
+      <div className="factRow"><span><b>2005</b>Established</span><span><b>{products.length}</b>Categories</span><span><b>India → Gulf</b>Supply reach</span></div>
     </section>
 
     <section className="founderStatement section" aria-labelledby="founder-statement">
@@ -150,8 +128,27 @@ export default function Home() {
     </section>
 
     <section className="products section" id="products">
-      <div className="sectionHead"><div><p className="kicker">Featured portfolio</p><h2>Our product categories</h2></div><p>Our wider portfolio spans 18+ surgical, diagnostic, PPE, pharma, furniture and critical-care categories. Explore featured areas or contact our team for a specific requirement.</p></div>
-      <div className="productGrid">{products.map((product, index) => <article id={product.type} key={product.title} className="productCard"><div className="productIcon"><Icon type={product.type} /></div><span>0{index + 1}</span><h3>{product.title}</h3><p>{product.text}</p><Link href={`/products/${product.slug}`} aria-label={`Explore ${product.title}`}>Explore <Arrow /></Link></article>)}</div>
+      <div className="sectionHead"><div><p className="kicker">Our complete portfolio</p><h2>Our product categories</h2></div><p>Explore all 20 categories across surgical supplies, critical care, hygiene, rehabilitation and more. Contact our team for your specific requirements.</p></div>
+      <div className="productGrid">
+        {products.map((product, index) => (
+          <article id={product.slug} key={product.slug} className="productCard productCardWithImage">
+            <div className="productCardImage">
+              <Image
+                src={product.image}
+                alt={product.title + " product selection"}
+                fill
+                sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 1100px) 43vw, 22vw"
+              />
+            </div>
+            <div className="productCardBody">
+              <span className="productCardNumber">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{product.title}</h3>
+              <p>{product.text}</p>
+              <Link href={`/products/${product.slug}`} aria-label={`Explore ${product.title}`}>Explore <Arrow /></Link>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
 
     <section className="specialities" id="specialities">
